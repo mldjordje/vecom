@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Fotografija displeja aparata sa greskom E-04">
+  <defs>
+    <linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b3833"/>
+      <stop offset="1" stop-color="#1d1b19"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22262b"/>
+      <stop offset="1" stop-color="#0d0f12"/>
+    </linearGradient>
+    <linearGradient id="glare" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".18"/>
+      <stop offset=".45" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#room)"/>
+  <ellipse cx="400" cy="120" rx="360" ry="140" fill="#ffffff" opacity=".05"/>
+
+  <!-- kuciste aparata -->
+  <rect x="70" y="60" width="660" height="480" rx="26" fill="#e9e7e2"/>
+  <rect x="70" y="60" width="660" height="480" rx="26" fill="none" stroke="#c8c5bf" stroke-width="2"/>
+  <rect x="96" y="92" width="608" height="330" rx="16" fill="#151719"/>
+
+  <!-- ekran -->
+  <rect x="112" y="108" width="576" height="298" rx="10" fill="url(#panel)"/>
+  <text x="140" y="152" font-family="Poppins, system-ui, sans-serif" font-size="20" fill="#9aa3ad" letter-spacing="2">SONATA 4XD</text>
+  <text x="648" y="152" text-anchor="end" font-family="Poppins, system-ui, sans-serif" font-size="18" fill="#9aa3ad">09:12</text>
+  <line x1="140" y1="168" x2="648" y2="168" stroke="#39414a" stroke-width="2"/>
+
+  <g>
+    <circle cx="238" cy="258" r="44" fill="none" stroke="#e0554a" stroke-width="7"/>
+    <rect x="234" y="232" width="9" height="34" rx="4" fill="#e0554a"/>
+    <circle cx="238.5" cy="280" r="5.5" fill="#e0554a"/>
+  </g>
+  <text x="312" y="248" font-family="Poppins, system-ui, sans-serif" font-size="66" font-weight="600" fill="#e0554a">E-04</text>
+  <text x="314" y="288" font-family="Poppins, system-ui, sans-serif" font-size="22" fill="#d6d3cd">COOLING FLOW ERROR</text>
+  <text x="314" y="322" font-family="Poppins, system-ui, sans-serif" font-size="18" fill="#8e969f">EMISSION STOPPED — CONTACT SERVICE</text>
+
+  <rect x="140" y="348" width="508" height="10" rx="5" fill="#2b3138"/>
+  <rect x="140" y="348" width="132" height="10" rx="5" fill="#b8862b"/>
+  <text x="140" y="384" font-family="Poppins, system-ui, sans-serif" font-size="16" fill="#8e969f">COOLANT LEVEL LOW</text>
+
+  <!-- odsjaj kao na fotografiji telefonom -->
+  <rect x="112" y="108" width="576" height="298" rx="10" fill="url(#glare)"/>
+
+  <!-- tasteri -->
+  <circle cx="180" cy="482" r="26" fill="#d9d6d0" stroke="#c0bcb5" stroke-width="2"/>
+  <circle cx="260" cy="482" r="26" fill="#d9d6d0" stroke="#c0bcb5" stroke-width="2"/>
+  <rect x="430" y="462" width="230" height="40" rx="20" fill="#d9d6d0" stroke="#c0bcb5" stroke-width="2"/>
+  <text x="545" y="489" text-anchor="middle" font-family="Poppins, system-ui, sans-serif" font-size="17" fill="#6c6862">EMERGENCY STOP</text>
+
+  <text x="724" y="580" text-anchor="end" font-family="Poppins, system-ui, sans-serif" font-size="14" fill="#8b857d">foto: Salon Lorena · 16.09.2026. 09:12</text>
+</svg>

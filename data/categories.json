@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Ležajevi",
+    "slug": "loungers"
+  },
+  {
+    "name": "Police",
+    "slug": "shelves"
+  },
+  {
+    "name": "Body program",
+    "slug": "body-program"
+  },
+  {
+    "name": "Laserski aparati",
+    "slug": "laser-devices"
+  },
+  {
+    "name": "Stolice",
+    "slug": "chairs"
+  },
+  {
+    "name": "Wellness Oprema",
+    "slug": "wellness-equipment"
+  },
+  {
+    "name": "Aparati",
+    "slug": "devices"
+  },
+  {
+    "name": "Face program",
+    "slug": "face-program"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "epi-1",
+    "title": "Epilacija — fototip I–III, tanka dlaka",
+    "device": "Sonata 4XD",
+    "tags": ["epilacija", "fototip I-III", "lice", "tanka dlaka"],
+    "indication": "Površno ukorenjena dlaka na obrvama, gornjoj usni i licu kod svetle kože.",
+    "params": [
+      ["Talasna dužina", "755 nm"],
+      ["Energija", "14–18 J/cm²"],
+      ["Trajanje impulsa", "20–30 ms"],
+      ["Frekvencija", "5–8 Hz"],
+      ["Broj prolaza", "2, u ukrštenim pravcima"],
+      ["Hlađenje kontakta", "0 do +4 °C"]
+    ],
+    "sessions": "6–8 tretmana na 4–6 nedelja",
+    "contra": "Sveži preplanulost, aktivna herpes infekcija, fotosenzitivna terapija, trudnoća.",
+    "combo": "Ne kombinovati sa hemijskim pilingom 14 dana pre i posle."
+  },
+  {
+    "id": "epi-2",
+    "title": "Epilacija — fototip IV–VI, duboko ukorenjena dlaka",
+    "device": "Sonata 4XD",
+    "tags": ["epilacija", "fototip V", "fototip VI", "telo", "tamna koža"],
+    "indication": "Aksila, intimna regija i skalp kod tamnijih fototipova i preplanule kože.",
+    "params": [
+      ["Talasna dužina", "1064 nm"],
+      ["Energija", "30–45 J/cm²"],
+      ["Trajanje impulsa", "30–50 ms"],
+      ["Frekvencija", "2–4 Hz"],
+      ["Broj prolaza", "1, sporo kretanje ručice"],
+      ["Hlađenje kontakta", "0 °C, obavezno"]
+    ],
+    "sessions": "8–10 tretmana na 5–7 nedelja",
+    "contra": "Keloidna sklonost, nedavno tetoviranje u zoni, dekompenzovani dijabetes.",
+    "combo": "Test tačka 48 h pre prvog tretmana obavezna."
+  },
+  {
+    "id": "epi-3",
+    "title": "Epilacija — prvi tretman, gusta dlaka",
+    "device": "Sonata 4XD",
+    "tags": ["epilacija", "prvi tretman", "ruke", "noge", "gusta dlaka"],
+    "indication": "Ruke, noge, obrazi i brada kod velike gustine dlake, bez obzira na fototip.",
+    "params": [
+      ["Talasna dužina", "808 nm"],
+      ["Energija", "20–26 J/cm²"],
+      ["Trajanje impulsa", "25–35 ms"],
+      ["Frekvencija", "8–10 Hz (in-motion)"],
+      ["Broj prolaza", "3–4 in-motion prolaza po zoni"],
+      ["Hlađenje kontakta", "+2 °C"]
+    ],
+    "sessions": "6–8 tretmana na 4–6 nedelja",
+    "contra": "Aktivna upala kože u zoni, uzimanje izotretinoina u poslednjih 6 meseci.",
+    "combo": "940 nm kao dodatni prolaz kod mešovite dubine folikula."
+  },
+  {
+    "id": "face-1",
+    "title": "Akne i postakne ožiljci",
+    "device": "RF Fractio 3 + Dermo Oxy",
+    "tags": ["akne", "ožiljci", "lice", "masna koža"],
+    "indication": "Papulopustulozne akne II stepena i plitki atrofični ožiljci.",
+    "params": [
+      ["Režim", "Frakciona RF, matriks 25 iglica"],
+      ["Dubina iglica", "0,5–1,0 mm"],
+      ["Energija", "nivo 3–5 od 10"],
+      ["Broj prolaza", "1 prolaz, bez preklapanja"],
+      ["Priprema", "Dermo Oxy čišćenje + kiseonička infuzija"]
+    ],
+    "sessions": "4 tretmana na 4 nedelje",
+    "contra": "Aktivna cistična akna, izotretinoin u toku, metalni implant u zoni.",
+    "combo": "LED plavo svetlo 10 min nakon tretmana; bez retinoida 5 dana."
+  },
+  {
+    "id": "face-2",
+    "title": "Pigmentacije i melazma",
+    "device": "Carbon 3XD ND YAG",
+    "tags": ["pigmentacije", "melazma", "lice", "fototip III"],
+    "indication": "Epidermalne pigmentne mrlje, solarni lentigo, blaža melazma.",
+    "params": [
+      ["Talasna dužina", "1064 nm Q-switch"],
+      ["Fluenca", "1,6–2,4 J/cm²"],
+      ["Veličina spota", "6–8 mm"],
+      ["Frekvencija", "5 Hz"],
+      ["Broj prolaza", "2 laka prolaza do blagog eritema"]
+    ],
+    "sessions": "5–6 tretmana na 3 nedelje",
+    "contra": "Izlaganje suncu bez zaštite, trudnoća, aktivna melazma u progresiji bez terapije.",
+    "combo": "SPF 50 obavezno 30 dana; azelainska kiselina kućno."
+  },
+  {
+    "id": "body-1",
+    "title": "Celulit i zatezanje — kombinovani protokol",
+    "device": "Body Sculpture II + EMS Tesla 2.0",
+    "tags": ["celulit", "telo", "zatezanje", "butine"],
+    "indication": "Celulit II–III stepena na butinama i zadnjici, blaža laksnost kože.",
+    "params": [
+      ["Kavitacija", "40 kHz, 10 min po zoni"],
+      ["RF zatezanje", "3–5 MHz, 42 °C površinski, 12 min"],
+      ["Vakuum", "nivo 2–3, sporo kretanje"],
+      ["EMS Tesla", "30 min, 70–90% intenziteta"],
+      ["Redosled", "Kavitacija → vakuum RF → EMS"]
+    ],
+    "sessions": "10–12 tretmana, 2 puta nedeljno",
+    "contra": "Trudnoća, pejsmejker, metalni implanti u zoni, epilepsija, tromboza.",
+    "combo": "2 l vode dnevno i limfna drenaža isti dan uveče."
+  }
+]

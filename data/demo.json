@@ -1,0 +1,252 @@
+{
+  "today": "2026-09-18",
+  "company": {
+    "name": "Salon Lorena",
+    "city": "Niš",
+    "address": "Obrenovićeva 24, Niš",
+    "contact": "Milica Petrović",
+    "email": "milica@salonlorena.rs",
+    "phone": "+381 63 448 921"
+  },
+  "admin": {
+    "name": "Jelena Ristić",
+    "role": "Prodaja i podrška — Vecom",
+    "email": "jelena@vecom.rs"
+  },
+  "installations": [
+    {
+      "slug": "sonata-4xd",
+      "sku": "9100",
+      "serial": "VEC-9100-2024-113",
+      "delivered": "2025-03-12",
+      "warrantyUntil": "2027-03-12",
+      "probe": { "name": "Sonda 15×20 mm", "used": 23400000, "total": 30000000 },
+      "trained": [
+        { "name": "Milica Petrović", "date": "2025-03-12" },
+        { "name": "Ana Ilić", "date": "2025-09-08" }
+      ],
+      "service": [
+        { "date": "2025-06-04", "title": "Redovan servis, zamena filtera", "status": "zatvoreno" },
+        { "date": "2026-02-19", "title": "Kalibracija ručice, provera hlađenja", "status": "zatvoreno" }
+      ]
+    },
+    {
+      "slug": "body-sculpture-2",
+      "sku": "9020/1",
+      "serial": "VEC-9020-2023-041",
+      "delivered": "2023-11-04",
+      "warrantyUntil": "2025-11-04",
+      "probe": { "name": "Ručica za kavitaciju", "used": 4100, "total": 20000 },
+      "trained": [{ "name": "Milica Petrović", "date": "2023-11-04" }],
+      "service": [
+        { "date": "2024-05-21", "title": "Zamena kabla ručice", "status": "zatvoreno" }
+      ]
+    }
+  ],
+  "tickets": [
+    {
+      "id": 482,
+      "slug": "sonata-4xd",
+      "serial": "VEC-9100-2024-113",
+      "company": "Salon Lorena",
+      "city": "Niš",
+      "issue": "Greška E-04 pri pokretanju",
+      "type": "Greška na displeju",
+      "status": "dijagnostika",
+      "opened": "2026-09-16",
+      "photo": "assets/demo/kvar.svg",
+      "messages": [
+        { "from": "kupac", "at": "16.09.2026. 09:12", "text": "Aparat se upali, posle 20 sekundi izbaci E-04 i ugasi zračenje. Šaljem sliku displeja." },
+        { "from": "vecom", "at": "16.09.2026. 10:40", "text": "Primljeno. E-04 je najčešće senzor protoka rashladne tečnosti. Molim proverite nivo destilovane vode." },
+        { "from": "kupac", "at": "16.09.2026. 11:05", "text": "Nivo je na minimumu, dopunila sam. Greška se i dalje javlja." }
+      ]
+    },
+    {
+      "id": 479,
+      "slug": "body-sculpture-2",
+      "serial": "VEC-9020-2023-041",
+      "company": "Beauty Studio M",
+      "city": "Podgorica",
+      "issue": "Slab intenzitet kavitacije",
+      "type": "Smanjen učinak",
+      "status": "deo",
+      "opened": "2026-09-11",
+      "photo": null,
+      "messages": [
+        { "from": "kupac", "at": "11.09.2026. 14:22", "text": "Ručica radi ali klijenti ne osećaju ništa." },
+        { "from": "vecom", "at": "12.09.2026. 08:15", "text": "Poručen je novi pretvarač, rok 5 radnih dana." }
+      ]
+    },
+    {
+      "id": 476,
+      "slug": "sonata-4xd",
+      "serial": "VEC-9100-2022-077",
+      "company": "Derma Klinika Vožd",
+      "city": "Beograd",
+      "issue": "Curenje rashladne tečnosti",
+      "type": "Hlađenje",
+      "status": "popravka",
+      "opened": "2026-09-08",
+      "photo": null,
+      "messages": [
+        { "from": "vecom", "at": "09.09.2026. 12:00", "text": "Aparat preuzet, u servisu u Nišu." }
+      ]
+    }
+  ],
+  "inquiries": [
+    {
+      "id": 1,
+      "name": "Milica Jovanović",
+      "device": "Sonata 4XD",
+      "city": "Kragujevac",
+      "type": "salon",
+      "source": "Google Ads",
+      "at": "pre 12 min",
+      "status": "nov",
+      "phone": "+381 64 112 887",
+      "note": "Otvara salon u oktobru, traži epilaciju za sve fototipove.",
+      "history": []
+    },
+    {
+      "id": 2,
+      "name": "Dr Nenad Stanković",
+      "device": "Ultralift HIFU",
+      "city": "Beograd",
+      "type": "klinika",
+      "source": "Instagram",
+      "at": "pre 2 sata",
+      "status": "kontaktiran",
+      "phone": "+381 63 990 214",
+      "note": "Ima dva HIFU aparata drugog proizvođača, pita za servis i obuku.",
+      "history": [{ "at": "danas 09:40", "text": "Zvala, zainteresovan, traži demo u showroomu." }]
+    },
+    {
+      "id": 3,
+      "name": "Beauty Studio M",
+      "device": "EMS Tesla 2.0",
+      "city": "Podgorica",
+      "type": "salon",
+      "source": "sajam",
+      "at": "juče",
+      "status": "ponuda",
+      "phone": "+382 67 331 002",
+      "note": "Traži ponudu sa isporukom u Crnu Goru.",
+      "history": [{ "at": "juče 16:20", "text": "Ponuda poslata na mejl, rok važenja 15 dana." }]
+    },
+    {
+      "id": 4,
+      "name": "Wellness Hotel Vrdnik",
+      "device": "Wellness Omnia Spa",
+      "city": "Vrdnik",
+      "type": "spa hotel",
+      "source": "preporuka",
+      "at": "pre 3 sata",
+      "status": "nov",
+      "phone": "+381 22 465 118",
+      "note": "Opremaju novo spa krilo, 4 ležaja + oprema.",
+      "history": []
+    }
+  ],
+  "parts": [
+    { "id": "p1", "name": "Sonda 15×20 mm", "for": "sonata-4xd", "note": "preporučeno — istrošenost 78%", "recommended": true },
+    { "id": "p2", "name": "Filter rashladnog sistema", "for": "sonata-4xd", "note": "menja se na 12 meseci" },
+    { "id": "p3", "name": "Ručica sa kristalom", "for": "sonata-4xd", "note": "rezervna" },
+    { "id": "p4", "name": "Kontaktni gel 5 l", "for": "sonata-4xd", "note": "potrošno" },
+    { "id": "p5", "name": "Pretvarač za kavitaciju", "for": "body-sculpture-2", "note": "rezervni" },
+    { "id": "p6", "name": "Kontaktni gel 5 l", "for": "body-sculpture-2", "note": "potrošno" }
+  ],
+  "orders": [
+    { "id": 1204, "company": "Salon Lorena", "city": "Niš", "items": "Sonda 15×20 mm × 1", "at": "danas 08:30", "status": "ceka" },
+    { "id": 1203, "company": "Derma Klinika Vožd", "city": "Beograd", "items": "Kontaktni gel 5 l × 4", "at": "juče", "status": "ceka" },
+    { "id": 1198, "company": "Salon Lorena", "city": "Niš", "items": "Filter rashladnog sistema × 1, Kontaktni gel 5 l × 2", "at": "12.06.2026.", "status": "isporuceno" }
+  ],
+  "fleet": [
+    {
+      "key": "garancija",
+      "label": "Garancija ističe za 60 dana",
+      "count": 5,
+      "salons": [
+        { "name": "Studio Belle", "city": "Novi Sad", "device": "3XD Fusion II", "detail": "garancija do 21.10.2026." },
+        { "name": "Laser Centar Niš", "city": "Niš", "device": "Sonata 4XD", "detail": "garancija do 02.11.2026." },
+        { "name": "Klinika Estetica", "city": "Beograd", "device": "Ultralift HIFU", "detail": "garancija do 09.11.2026." },
+        { "name": "Salon Vivien", "city": "Skoplje", "device": "EMS Tesla", "detail": "garancija do 14.11.2026." },
+        { "name": "Beauty Line", "city": "Beč", "device": "Body Sculpture", "detail": "garancija do 16.11.2026." }
+      ]
+    },
+    {
+      "key": "sonda",
+      "label": "Sonda pri kraju",
+      "count": 3,
+      "salons": [
+        { "name": "Salon Lorena", "city": "Niš", "device": "Sonata 4XD", "detail": "sonda 78% istrošena" },
+        { "name": "Epil Studio", "city": "Čačak", "device": "3XD Fusion", "detail": "sonda 84% istrošena" },
+        { "name": "Derma Klinika Vožd", "city": "Beograd", "device": "Sonata 4XD", "detail": "sonda 91% istrošena" }
+      ]
+    },
+    {
+      "key": "potrosni",
+      "label": "Nisu poručili potrošni 6 meseci",
+      "count": 7,
+      "salons": [
+        { "name": "Studio Sofija", "city": "Kragujevac", "device": "Face Combo 7“", "detail": "poslednja porudžbina 02.2026." },
+        { "name": "Bellezza", "city": "Subotica", "device": "Hidraclear 6D", "detail": "poslednja porudžbina 01.2026." },
+        { "name": "Spa Zlatibor", "city": "Zlatibor", "device": "Wellness Exclusive 4", "detail": "poslednja porudžbina 12.2025." },
+        { "name": "Salon Iva", "city": "Leskovac", "device": "Body Master", "detail": "poslednja porudžbina 03.2026." },
+        { "name": "Klinika Nova", "city": "Podgorica", "device": "RF Fractio 3", "detail": "poslednja porudžbina 02.2026." },
+        { "name": "Studio Ana", "city": "Bitolj", "device": "Dermo Oxy", "detail": "poslednja porudžbina 01.2026." },
+        { "name": "Kosmetik Wien", "city": "Beč", "device": "Mezo Skin EP", "detail": "poslednja porudžbina 11.2025." }
+      ]
+    },
+    {
+      "key": "stari",
+      "label": "Aparat stariji od 5 godina",
+      "count": 11,
+      "salons": [
+        { "name": "Salon Milena", "city": "Vranje", "device": "Crystal Laser Portabl Light", "detail": "isporučeno 2019." },
+        { "name": "Studio Kristal", "city": "Pirot", "device": "Body Contour", "detail": "isporučeno 2018." },
+        { "name": "Lepota Centar", "city": "Užice", "device": "Deep Clean", "detail": "isporučeno 2020." },
+        { "name": "Klinika Vita", "city": "Beograd", "device": "3XC Alfa Portabl II", "detail": "isporučeno 2019." },
+        { "name": "Spa Hotel Junior", "city": "Brzeće", "device": "Wellness Exclusive 2", "detail": "isporučeno 2017." }
+      ]
+    }
+  ],
+  "stats": {
+    "byDevice": [
+      { "label": "Sonata 4XD", "value": 14 },
+      { "label": "EMS Tesla 2.0", "value": 9 },
+      { "label": "Ultralift HIFU", "value": 7 },
+      { "label": "Body Sculpture II", "value": 5 },
+      { "label": "Hidraclear 6D", "value": 3 }
+    ],
+    "byCountry": [
+      { "label": "Srbija", "value": 24 },
+      { "label": "Crna Gora", "value": 6 },
+      { "label": "S. Makedonija", "value": 5 },
+      { "label": "Austrija", "value": 3 }
+    ],
+    "bySource": [
+      { "label": "Google Ads", "value": 16 },
+      { "label": "Instagram", "value": 10 },
+      { "label": "Preporuka", "value": 7 },
+      { "label": "Sajam", "value": 5 }
+    ],
+    "funnel": [
+      { "label": "Upiti", "value": 38 },
+      { "label": "Ponude", "value": 17 },
+      { "label": "Prodaje", "value": 6 }
+    ]
+  },
+  "documents": [
+    { "name": "Uputstvo za rukovanje — Sonata 4XD", "type": "PDF", "size": "4,2 MB" },
+    { "name": "Praktikum i protokoli tretmana", "type": "PDF", "size": "8,7 MB" },
+    { "name": "CE sertifikat", "type": "PDF", "size": "620 KB" },
+    { "name": "ALIMS rešenje", "type": "PDF", "size": "410 KB" },
+    { "name": "Garantni list — VEC-9100-2024-113", "type": "PDF", "size": "180 KB" },
+    { "name": "Sertifikat o obuci — Milica Petrović", "type": "PDF", "size": "210 KB" },
+    { "name": "Sertifikat o obuci — Ana Ilić", "type": "PDF", "size": "210 KB" }
+  ],
+  "notifications": [
+    { "at": "danas", "text": "Nova verzija protokola za Sonatu 4XD — dodat protokol za fototip V." },
+    { "at": "pre 2 dana", "text": "Podsetnik: sonda je na 78% resursa, preporučujemo poručivanje rezervne." }
+  ]
+}
