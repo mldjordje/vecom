@@ -6,43 +6,44 @@ u postojeći sajt vecom.rs. Bez bekenda, bez baze, bez prave prijave. Katalog ap
 
 ## Pokretanje
 
-**Na sastanku:** dvoklik na `index.html`. Radi offline, bez servera i bez interneta
-(podaci su u `data/bundle.js`, slike lokalno u `assets/`). Jedino se Poppins font skida
-sa Google Fonts — bez interneta pada na sistemski sans, izgled ostaje isti.
-
-**Za razvoj** (ako treba server):
+Next.js 16 (App Router, TypeScript), bez bekenda. Stanje je u memoriji browsera.
 
 ```bash
-npx -y serve -l 4321 .
+npm install
+npm run dev
 ```
+
+Otvara se na http://localhost:4321. Produkcija: `npm run build` pa `npm start`.
+
+**Vercel:** uvesti repo, Framework Preset **Next.js** (prepoznaje sam), ostalo podrazumevano.
+
+Poppins ide preko `next/font` — servira se sa istog domena, ne zavisi od Google Fonts.
 
 ## Struktura
 
 ```
-index.html        ljuska, traka sa personama, DEMO oznaka
-styles.css        paleta i tipografija sa vecom.rs
-app.js            svi ekrani, stanje, prevodi i ruter (location.hash)
-data/products.json    54 aparata iz Sanityja (naziv i opis SR/EN/DE, specifikacija SR)
-data/categories.json  8 kategorija
-data/demo.json        lažni kupac, upiti, tiketi, porudžbine, teren, brojke
-data/protocols.json   6 primera protokola tretmana
-data/bundle.js        sva četiri JSON-a spojena u window.VECOM (generisano)
-assets/products/*.webp  slike aparata, skinute lokalno
-assets/demo/kvar.svg    "fotografija" displeja sa greškom E-04
-scripts/harvest.mjs   skidanje kataloga sa Sanityja (samo čitanje)
-scripts/bundle.mjs    data/*.json -> data/bundle.js
+app/layout.tsx          html, Poppins, metadata (noindex)
+app/page.tsx            jedina stranica; ekrani idu preko #hash rute
+app/globals.css         paleta i tipografija sa vecom.rs
+components/DemoApp.tsx  React ljuska: traka sa personama, #app, toast; montira engine
+lib/demo/engine.js      svi ekrani, stanje, prevodi i ruter (location.hash)
+lib/demo/data.ts        uvoz JSON podataka za engine
+data/products.json      54 aparata iz Sanityja (naziv i opis SR/EN/DE, specifikacija SR)
+data/categories.json    8 kategorija
+data/demo.json          lažni kupac, upiti, tiketi, porudžbine, teren, brojke
+data/protocols.json     6 primera protokola tretmana
+public/assets/products/*.webp  slike aparata, skinute lokalno
+public/assets/demo/kvar.svg    "fotografija" displeja sa greškom E-04
+scripts/harvest.mjs     skidanje kataloga sa Sanityja (samo čitanje)
 ```
 
-Posle izmene bilo kog JSON-a u `data/`:
-
-```bash
-node scripts/bundle.mjs
-```
+Ekrani su za sada HTML stringovi u `lib/demo/engine.js`, montirani iz React ljuske.
+Za pravu aplikaciju prebacuju se u React komponente jedan po jedan (admin po kosturu iz Vita projekta).
 
 Ponovno skidanje kataloga (slike se ne skidaju ponovo ako već postoje):
 
 ```bash
-node scripts/harvest.mjs
+npm run harvest
 ```
 
 ## Ekrani
@@ -106,3 +107,4 @@ Protokole, dokumenta i porudžbine samo pomenuti.
 - Njihov Sanity se samo čita; slike i tekstovi se koriste isključivo za ovaj demo.
 - Prijava Google nalogom je samo izgled — ne otvara OAuth i ne dodiruje tuđe naloge.
 - Osvežavanje stranice briše sve što je unešeno u demou (stanje je u memoriji).
+- Demo ne radi dvoklikom bez interneta — otvara se preko Vercel linka ili `npm run dev`.

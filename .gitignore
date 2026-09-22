@@ -1,4 +1,13 @@
-.claude/
-node_modules/
+node_modules
+.next
+out
+build
 .DS_Store
 Thumbs.db
+*.pem
+.env*
+!.env.example
+.vercel
+next-env.d.ts
+*.tsbuildinfo
+.claude/

@@ -30,7 +30,7 @@ const products = await groq(`*[_type=="product"]|order(order asc){
 const categories = await groq(`*[_type=="category"]{ "slug": slug.current, "name": coalesce(nameSr, name, title) }`);
 
 await mkdir("data", { recursive: true });
-await mkdir("assets/products", { recursive: true });
+await mkdir("public/assets/products", { recursive: true });
 
 // portable text -> plain string
 const flat = (blocks) =>
@@ -46,10 +46,11 @@ for (const p of products) {
   const ref = p.mainImage || p.images?.[0];
   let file = null;
   if (ref) {
+    // fajl ide u public/, a u JSON-u putanja kako je browser vidi
     file = `assets/products/${p.slug}.webp`;
-    if (!(await exists(file))) {
+    if (!(await exists(`public/${file}`))) {
       const buf = Buffer.from(await (await fetch(refToUrl(ref))).arrayBuffer());
-      await writeFile(file, buf);
+      await writeFile(`public/${file}`, buf);
     }
   }
   // SR/EN/DE za sekcije sajta, specifikacija samo SR; bez Sanity meta polja
@@ -82,7 +83,6 @@ await writeFile("data/products.json", JSON.stringify(out, null, 2));
 await writeFile("data/categories.json", JSON.stringify(categories, null, 2));
 
 const logo = Buffer.from(await (await fetch("https://vecom.rs/vecom-black.png")).arrayBuffer());
-await mkdir("assets", { recursive: true });
-await writeFile("assets/vecom-logo.png", logo);
+await writeFile("public/assets/vecom-logo.png", logo);
 
 console.log(`\ngotovo: ${out.length} proizvoda`);
