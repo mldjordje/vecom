@@ -32,6 +32,8 @@ data/products.json      54 aparata iz Sanityja (naziv i opis SR/EN/DE, specifika
 data/categories.json    8 kategorija
 data/demo.json          lažni kupac, upiti, tiketi, porudžbine, teren, brojke
 data/protocols.json     6 primera protokola tretmana
+data/posts.json         2 prave blog objave iz Sanityja (SR/EN, sa tekstom)
+app/customer.css        kupčev nalog, edukacija i sertifikat, booking, admin novosti
 public/assets/products/*.webp  slike aparata, skinute lokalno
 public/assets/demo/kvar.svg    "fotografija" displeja sa greškom E-04
 scripts/harvest.mjs     skidanje kataloga sa Sanityja (samo čitanje)
@@ -71,11 +73,28 @@ ROI na EN/DE računa u evrima (Austrija). Upit sa EN/DE stiže u admin sa oznako
 
 Za probu statusa servisa upisati broj **482**.
 
+**Demo termin** (`#/site/demo`): kalendar u stilu Calendly — aparat sa slikom, lokacija,
+mesečni kalendar (slobodni / popunjeni dani), termini pre i posle podne, podaci, sažetak
+zalepljen na dnu. Potvrda ima „Dodaj u kalendar” (pravi `.ics`) i stiže u admin kao upit.
+
 ### Kupac (`#/login`)
 
-Google dugme je vizuelno (600 ms pa ulazak kao Milica Petrović): početna sa dva aparata
-i stanjem sonde, kartica aparata, prijava kvara sa fotografijom, potrošni materijal,
-protokoli, dokumenta.
+Google dugme je vizuelno (600 ms pa ulazak kao Milica Petrović). App ljuska: svetli sidebar
+na desktopu, traka sa karticama na telefonu.
+
+- **Početna:** pozdrav i stanje, brze akcije, upozorenje za sondu (jedan klik u korpu),
+  kartice aparata sa prstenovima (garancija, sonda), servis sa koracima, aktivnost,
+  napredak kursa, Vecom novosti, kontakt osoba.
+- **Aparat:** hero sa slikom i prstenovima, tabovi Pregled / Servis / Obuka / Specifikacija.
+- **Edukacija** (`#/app/edu`): mini kurs od 20 lekcija u 5 modula (video + tekst + „zapamtite”).
+  Napredak se čuva; posle poslednje lekcije otključava se **sertifikat za štampu**
+  (`#/app/edu/cert`, A4 landscape). Za sastanak: link „označi sve lekcije kao odgledane”.
+- **Novosti:** prave objave sa njihovog bloga (iz Sanityja) i sve što admin objavi za Moj Vecom.
+- Servis, prijava kvara, potrošni, protokoli, dokumenta.
+
+**Video za kurs:** kad se snimak iseče na 20 delova, fajlove staviti u `public/video/`
+i u `COURSE` u `lib/demo/engine.js` lekciji dodati `video: "/video/01.mp4"`. Lekcija tada
+prikazuje pravi plejer i sama se označava kao odgledana kad se klip završi.
 
 ### Admin (`#/admin`)
 
@@ -85,17 +104,21 @@ protokoli, dokumenta.
   tamni sidebar, prekidač uloga, topbar, metrika-kartice, lista + detalj za upite i servis.
 - **Prikaz na telefonu:** dugme u sidebaru prebacuje u okvir telefona (traka sa karticama na dnu).
   Na pravom telefonu admin je uvek u mobilnom prikazu.
-- **Uloge:** Prodaja (Jelena — pregled, upiti, servis, porudžbine, teren, brojke) i
+- **Uloge:** Prodaja (Jelena — pregled, upiti, servis, novosti, porudžbine, teren, brojke) i
   Serviser (Dejan — moj dan sa obilascima, servis, delovi).
+- **Novosti i blog** (`#/admin/news`): prave objave iz Sanityja + nacrti; statusi objavljeno /
+  zakazano / nacrt, oznake jezika (DE nedostaje i na današnjem sajtu), editor sa SR/EN/DE
+  tabovima, naslovnom slikom i pregledom Google rezultata. Kanali: sajt, Moj Vecom, mejl;
+  publika: svi kupci ili samo vlasnici određenog aparata. Objava za Moj Vecom odmah se vidi kod kupca.
 
 ## Redosled na sastanku, 15 min
 
-1. Kupčev dashboard (2)
+1. Kupčev dashboard + Edukacija: lekcija → „označi sve” → sertifikat (2)
 2. Prijava kvara — dugme „Uzmi demo fotografiju” pa Pošalji (2)
 3. Admin: Sign in with Google → prebaci na telefon → upit → Pozovi → status; tiket #483 sa fotografijom;
    teren → garancije → pošalji svima; kratko vrati na desktop i uloga Serviser (4)
 4. Sajt: stranica aparata → prebaci na DE → pošalji upit → „Vidi kako je stiglo adminu”; ROI kalkulator (2)
-5. Sajt: vodič kroz izbor; demo termin i status servisa samo pomenuti (2)
+5. Sajt: demo termin u kalendaru; vodič kroz izbor; status servisa samo pomenuti (2)
 6. Pitanja (3)
 
 Protokole, dokumenta i porudžbine samo pomenuti.

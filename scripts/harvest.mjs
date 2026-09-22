@@ -85,4 +85,40 @@ await writeFile("data/categories.json", JSON.stringify(categories, null, 2));
 const logo = Buffer.from(await (await fetch("https://vecom.rs/vecom-black.png")).arrayBuffer());
 await writeFile("public/assets/vecom-logo.png", logo);
 
-console.log(`\ngotovo: ${out.length} proizvoda`);
+// blog objave — za admin "Novosti" i novosti u kupčevom nalogu
+const posts = await groq(`*[_type=="post"]|order(publishedAt desc){
+  titleSr, titleEn, titleDe, descriptionSr, descriptionEn, descriptionDe,
+  "slug": coalesce(slugSr.current, slugEn.current), publishedAt,
+  contentSr, contentEn, contentDe, "image": image.asset._ref
+}`);
+
+// portable text -> [{ style, text }], da se sacuvaju podnaslovi
+const blocks = (arr) =>
+  (arr || [])
+    .filter((b) => b._type === "block")
+    .map((b) => ({ style: b.style || "normal", text: (b.children || []).map((c) => c.text).join("") }))
+    .filter((b) => b.text.trim());
+
+await mkdir("public/assets/posts", { recursive: true });
+const postsOut = [];
+for (const p of posts) {
+  let file = null;
+  if (p.image) {
+    file = `assets/posts/${p.slug}.webp`;
+    if (!(await exists(`public/${file}`))) {
+      const buf = Buffer.from(await (await fetch(refToUrl(p.image, 1000))).arrayBuffer());
+      await writeFile(`public/${file}`, buf);
+    }
+  }
+  postsOut.push({
+    slug: p.slug,
+    publishedAt: p.publishedAt,
+    image: file,
+    title: { sr: p.titleSr || "", en: p.titleEn || "", de: p.titleDe || "" },
+    excerpt: { sr: p.descriptionSr || "", en: p.descriptionEn || "", de: p.descriptionDe || "" },
+    body: { sr: blocks(p.contentSr), en: blocks(p.contentEn), de: blocks(p.contentDe) },
+  });
+}
+await writeFile("data/posts.json", JSON.stringify(postsOut, null, 2));
+
+console.log(`\ngotovo: ${out.length} proizvoda, ${postsOut.length} objava`);
