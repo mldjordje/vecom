@@ -122,7 +122,8 @@ button, input, select, textarea {
 
 /* ---------- opsti raspored ---------- */
 
-.wrap { max-width: var(--maxw); margin: 0 auto; padding: 22px 16px 80px; }
+/* :not(.row) — "row wrap" je modifikator reda, ne kontejner stranice */
+.wrap:not(.row) { max-width: var(--maxw); margin: 0 auto; padding: 22px 16px 80px; }
 
 .subnav {
   display: flex;

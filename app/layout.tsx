@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import "./customer.css";
+import "./extras.css";
 
 // next/font skida Poppins pri build-u i servira ga sa istog domena,
 // pa na sastanku ne zavisi od Google Fonts

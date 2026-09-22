@@ -1,0 +1,60 @@
+{
+  "testimonials": [
+    {
+      "author": "Dr Marus",
+      "stars": 5,
+      "message": {
+        "sr": "\"EMS Tesla je postao najtraženiji tretman u našem centru. Tehnologija je vrhunska, a podrška koju Vecom pruža u smislu servisiranja i saveta je besprekorna. Prava investicija u budućnost.\"",
+        "en": "\"EMS Tesla has become the most sought-after treatment in our center. The technology is cutting-edge, and the support Vecom provides in terms of maintenance and advice is flawless. A true investment in the future.\"",
+        "de": "\"EMS Tesla ist zur gefragtesten Behandlung in unserem Zentrum geworden. Die Technologie ist erstklassig und die Unterstützung, die Vecom in Bezug auf Service und Beratung bietet, ist makellos. Eine echte Investition in die Zukunft.\""
+      }
+    },
+    {
+      "author": "Dr Milos",
+      "stars": 5,
+      "message": {
+        "sr": "\"Ono što izdvaja Vecom je njihova posvećenost edukaciji. Nije nam samo prodat aparat; dobili smo detaljnu obuku i sigurnost u radu. Njihova stručnost nam daje ogroman vetar u leđa.\"",
+        "en": "\"What sets Vecom apart is their commitment to education. We didn't just buy a machine; we received comprehensive training and the confidence to operate it perfectly. Their expertise is a huge asset to our business.\"",
+        "de": "\"Was Vecom auszeichnet, ist ihr Engagement für die Ausbildung. Wir haben nicht nur ein Gerät gekauft, sondern eine umfassende Schulung und Sicherheit in der Anwendung erhalten. Ihre Expertise gibt uns enormen Rückenwind.\""
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "sr": "Šta ako dođe do kvara aparata?",
+        "en": "What if the device breaks down?",
+        "de": "Was passiert, wenn das Gerät ausfällt?"
+      },
+      "a": {
+        "sr": "Ukoliko dođe do kvara Vašeg aparata, u našoj kompaniji radimo i servis aparata!",
+        "en": "If your device breaks down, we also service the device in our company!",
+        "de": "Sollte Ihr Gerät einmal kaputtgehen, reparieren wir es auch in unserem Unternehmen!"
+      }
+    },
+    {
+      "q": {
+        "sr": "Koliko čekamo isporuku?",
+        "en": "How long do we have to wait for delivery?",
+        "de": "Wie lange müssen wir auf die Lieferung warten?"
+      },
+      "a": {
+        "sr": "U zavisnosti od aparata, isporuka se čeka 7 do 10 dana",
+        "en": "Delivery takes 7 to 14 days on average.",
+        "de": "Die Lieferung dauert im Durchschnitt 7 bis 14 Tage."
+      }
+    },
+    {
+      "q": {
+        "sr": "Da li dobijam edukaciju uz kupovinu aparata?",
+        "en": "Do I get education with the purchase of the device?",
+        "de": "Ist beim Kauf des Geräts eine Schulung enthalten?"
+      },
+      "a": {
+        "sr": "Da, uz svaki kupljen Vecom Aparat dobijate i besplatu edukaciju.",
+        "en": "Yes, with every purchased Vecom device you get free training.",
+        "de": "Ja, zu jedem gekauften Vecom-Gerät erhalten Sie eine kostenlose Schulung."
+      }
+    }
+  ]
+}

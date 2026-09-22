@@ -121,4 +121,22 @@ for (const p of posts) {
 }
 await writeFile("data/posts.json", JSON.stringify(postsOut, null, 2));
 
-console.log(`\ngotovo: ${out.length} proizvoda, ${postsOut.length} objava`);
+// iskustva kupaca i česta pitanja — ulaze u "Sadržaj sajta" u adminu
+const site = await groq(`{
+  "testimonials": *[_type=="testimonial"]{ author, stars, messageSr, messageEn, messageDe },
+  "faq": *[_type=="faq"]{ questionSr, questionEn, questionDe, answerSr, answerEn, answerDe }
+}`);
+const tri = (o, k) => ({ sr: o[k + "Sr"] || "", en: o[k + "En"] || "", de: o[k + "De"] || "" });
+await writeFile(
+  "data/site.json",
+  JSON.stringify(
+    {
+      testimonials: site.testimonials.map((x) => ({ author: x.author, stars: x.stars || 5, message: tri(x, "message") })),
+      faq: site.faq.map((x) => ({ q: tri(x, "question"), a: tri(x, "answer") })),
+    },
+    null,
+    2
+  )
+);
+
+console.log(`\ngotovo: ${out.length} proizvoda, ${postsOut.length} objava, ${site.testimonials.length} iskustva, ${site.faq.length} pitanja`);
