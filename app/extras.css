@@ -107,6 +107,27 @@
 .tst blockquote { margin: 8px 0; font-size: 14px; line-height: 1.6; }
 .tst figcaption { font-size: 13px; color: var(--muted); }
 
+/* ---------- jezik kupčevog naloga ---------- */
+
+.cu-lang { display: inline-flex; gap: 2px; border: 1px solid var(--line); background: var(--white); border-radius: 999px; padding: 2px; flex: none; }
+.cu-lang button {
+  border: 0; background: transparent; border-radius: 999px; padding: 4px 9px;
+  font-size: 11px; letter-spacing: 0.06em; color: var(--muted); cursor: pointer;
+}
+.cu-lang button.on { background: var(--ink); color: var(--white); }
+
+/* ---------- aplikacija na telefonu ---------- */
+
+.app-card h3 { font-size: 16px; }
+.app-ic {
+  width: 44px; height: 44px; border-radius: 12px; flex: none; display: grid; place-items: center;
+  background: var(--ink); color: var(--cream); font-weight: 600; font-size: 22px;
+}
+.app-notif { display: grid; gap: 8px; justify-items: start; border-top: 1px solid var(--line); margin-top: 12px; padding-top: 12px; }
+.cu-bell { position: relative; text-decoration: none; flex: none; }
+.cu-bell .cu-badge { position: absolute; top: -4px; right: -6px; font-size: 10px; min-width: 18px; padding: 1px 5px; }
+.unread-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warn); flex: none; }
+
 @media (max-width: 720px) {
   .learner { grid-template-columns: auto minmax(0, 1fr); }
   .learner-p { grid-column: 1 / -1; }

@@ -18,12 +18,14 @@ export const metadata: Metadata = {
   description: "Klikabilni demo: sekcije za vecom.rs, kupčev nalog i admin. Nije zvanična Vecom aplikacija.",
   icons: { icon: "/assets/vecom-logo.png" },
   robots: { index: false, follow: false },
+  appleWebApp: { capable: true, title: "Moj Vecom", statusBarStyle: "default" },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: "#2E2B26",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

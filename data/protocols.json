@@ -3,105 +3,684 @@
     "id": "epi-1",
     "title": "Epilacija — fototip I–III, tanka dlaka",
     "device": "Sonata 4XD",
-    "tags": ["epilacija", "fototip I-III", "lice", "tanka dlaka"],
+    "tags": [
+      "epilacija",
+      "fototip I-III",
+      "lice",
+      "tanka dlaka"
+    ],
     "indication": "Površno ukorenjena dlaka na obrvama, gornjoj usni i licu kod svetle kože.",
     "params": [
-      ["Talasna dužina", "755 nm"],
-      ["Energija", "14–18 J/cm²"],
-      ["Trajanje impulsa", "20–30 ms"],
-      ["Frekvencija", "5–8 Hz"],
-      ["Broj prolaza", "2, u ukrštenim pravcima"],
-      ["Hlađenje kontakta", "0 do +4 °C"]
+      [
+        "Talasna dužina",
+        "755 nm"
+      ],
+      [
+        "Energija",
+        "14–18 J/cm²"
+      ],
+      [
+        "Trajanje impulsa",
+        "20–30 ms"
+      ],
+      [
+        "Frekvencija",
+        "5–8 Hz"
+      ],
+      [
+        "Broj prolaza",
+        "2, u ukrštenim pravcima"
+      ],
+      [
+        "Hlađenje kontakta",
+        "0 do +4 °C"
+      ]
     ],
     "sessions": "6–8 tretmana na 4–6 nedelja",
     "contra": "Sveži preplanulost, aktivna herpes infekcija, fotosenzitivna terapija, trudnoća.",
-    "combo": "Ne kombinovati sa hemijskim pilingom 14 dana pre i posle."
+    "combo": "Ne kombinovati sa hemijskim pilingom 14 dana pre i posle.",
+    "de": {
+      "title": "Haarentfernung — Hauttyp I–III, feines Haar",
+      "tags": [
+        "haarentfernung",
+        "hauttyp I-III",
+        "gesicht",
+        "feines haar"
+      ],
+      "indication": "Oberflächlich verwurzeltes Haar an Augenbrauen, Oberlippe und Gesicht bei heller Haut.",
+      "params": [
+        [
+          "Wellenlänge",
+          "755 nm"
+        ],
+        [
+          "Energie",
+          "14–18 J/cm²"
+        ],
+        [
+          "Impulsdauer",
+          "20–30 ms"
+        ],
+        [
+          "Frequenz",
+          "5–8 Hz"
+        ],
+        [
+          "Durchgänge",
+          "2, kreuzweise"
+        ],
+        [
+          "Kontaktkühlung",
+          "0 bis +4 °C"
+        ]
+      ],
+      "sessions": "6–8 Behandlungen im Abstand von 4–6 Wochen",
+      "contra": "Frische Bräune, aktiver Herpes, fotosensibilisierende Therapie, Schwangerschaft.",
+      "combo": "Kein chemisches Peeling 14 Tage davor und danach."
+    },
+    "en": {
+      "title": "Hair removal — skin type I–III, fine hair",
+      "tags": [
+        "hair removal",
+        "skin type I-III",
+        "face",
+        "fine hair"
+      ],
+      "indication": "Superficially rooted hair on brows, upper lip and face with light skin.",
+      "params": [
+        [
+          "Wavelength",
+          "755 nm"
+        ],
+        [
+          "Energy",
+          "14–18 J/cm²"
+        ],
+        [
+          "Pulse duration",
+          "20–30 ms"
+        ],
+        [
+          "Frequency",
+          "5–8 Hz"
+        ],
+        [
+          "Passes",
+          "2, crossing"
+        ],
+        [
+          "Contact cooling",
+          "0 to +4 °C"
+        ]
+      ],
+      "sessions": "6–8 treatments, 4–6 weeks apart",
+      "contra": "Fresh tan, active herpes, photosensitising therapy, pregnancy.",
+      "combo": "No chemical peel for 14 days before and after."
+    }
   },
   {
     "id": "epi-2",
     "title": "Epilacija — fototip IV–VI, duboko ukorenjena dlaka",
     "device": "Sonata 4XD",
-    "tags": ["epilacija", "fototip V", "fototip VI", "telo", "tamna koža"],
+    "tags": [
+      "epilacija",
+      "fototip V",
+      "fototip VI",
+      "telo",
+      "tamna koža"
+    ],
     "indication": "Aksila, intimna regija i skalp kod tamnijih fototipova i preplanule kože.",
     "params": [
-      ["Talasna dužina", "1064 nm"],
-      ["Energija", "30–45 J/cm²"],
-      ["Trajanje impulsa", "30–50 ms"],
-      ["Frekvencija", "2–4 Hz"],
-      ["Broj prolaza", "1, sporo kretanje ručice"],
-      ["Hlađenje kontakta", "0 °C, obavezno"]
+      [
+        "Talasna dužina",
+        "1064 nm"
+      ],
+      [
+        "Energija",
+        "30–45 J/cm²"
+      ],
+      [
+        "Trajanje impulsa",
+        "30–50 ms"
+      ],
+      [
+        "Frekvencija",
+        "2–4 Hz"
+      ],
+      [
+        "Broj prolaza",
+        "1, sporo kretanje ručice"
+      ],
+      [
+        "Hlađenje kontakta",
+        "0 °C, obavezno"
+      ]
     ],
     "sessions": "8–10 tretmana na 5–7 nedelja",
     "contra": "Keloidna sklonost, nedavno tetoviranje u zoni, dekompenzovani dijabetes.",
-    "combo": "Test tačka 48 h pre prvog tretmana obavezna."
+    "combo": "Test tačka 48 h pre prvog tretmana obavezna.",
+    "de": {
+      "title": "Haarentfernung — Hauttyp IV–VI, tief verwurzeltes Haar",
+      "tags": [
+        "haarentfernung",
+        "hauttyp V",
+        "hauttyp VI",
+        "körper",
+        "dunkle haut"
+      ],
+      "indication": "Achseln, Intimbereich und Kopfhaut bei dunkleren Hauttypen und gebräunter Haut.",
+      "params": [
+        [
+          "Wellenlänge",
+          "1064 nm"
+        ],
+        [
+          "Energie",
+          "30–45 J/cm²"
+        ],
+        [
+          "Impulsdauer",
+          "30–50 ms"
+        ],
+        [
+          "Frequenz",
+          "2–4 Hz"
+        ],
+        [
+          "Durchgänge",
+          "1, langsame Führung"
+        ],
+        [
+          "Kontaktkühlung",
+          "0 °C, Pflicht"
+        ]
+      ],
+      "sessions": "8–10 Behandlungen im Abstand von 5–7 Wochen",
+      "contra": "Neigung zu Keloiden, frisches Tattoo in der Zone, entgleister Diabetes.",
+      "combo": "Testpunkt 48 h vor der ersten Behandlung ist Pflicht."
+    },
+    "en": {
+      "title": "Hair removal — skin type IV–VI, deeply rooted hair",
+      "tags": [
+        "hair removal",
+        "skin type V",
+        "skin type VI",
+        "body",
+        "dark skin"
+      ],
+      "indication": "Underarms, intimate area and scalp in darker skin types and tanned skin.",
+      "params": [
+        [
+          "Wavelength",
+          "1064 nm"
+        ],
+        [
+          "Energy",
+          "30–45 J/cm²"
+        ],
+        [
+          "Pulse duration",
+          "30–50 ms"
+        ],
+        [
+          "Frequency",
+          "2–4 Hz"
+        ],
+        [
+          "Passes",
+          "1, slow handpiece movement"
+        ],
+        [
+          "Contact cooling",
+          "0 °C, required"
+        ]
+      ],
+      "sessions": "8–10 treatments, 5–7 weeks apart",
+      "contra": "Keloid tendency, recent tattoo in the area, uncontrolled diabetes.",
+      "combo": "A test spot 48 h before the first treatment is required."
+    }
   },
   {
     "id": "epi-3",
     "title": "Epilacija — prvi tretman, gusta dlaka",
     "device": "Sonata 4XD",
-    "tags": ["epilacija", "prvi tretman", "ruke", "noge", "gusta dlaka"],
+    "tags": [
+      "epilacija",
+      "prvi tretman",
+      "ruke",
+      "noge",
+      "gusta dlaka"
+    ],
     "indication": "Ruke, noge, obrazi i brada kod velike gustine dlake, bez obzira na fototip.",
     "params": [
-      ["Talasna dužina", "808 nm"],
-      ["Energija", "20–26 J/cm²"],
-      ["Trajanje impulsa", "25–35 ms"],
-      ["Frekvencija", "8–10 Hz (in-motion)"],
-      ["Broj prolaza", "3–4 in-motion prolaza po zoni"],
-      ["Hlađenje kontakta", "+2 °C"]
+      [
+        "Talasna dužina",
+        "808 nm"
+      ],
+      [
+        "Energija",
+        "20–26 J/cm²"
+      ],
+      [
+        "Trajanje impulsa",
+        "25–35 ms"
+      ],
+      [
+        "Frekvencija",
+        "8–10 Hz (in-motion)"
+      ],
+      [
+        "Broj prolaza",
+        "3–4 in-motion prolaza po zoni"
+      ],
+      [
+        "Hlađenje kontakta",
+        "+2 °C"
+      ]
     ],
     "sessions": "6–8 tretmana na 4–6 nedelja",
     "contra": "Aktivna upala kože u zoni, uzimanje izotretinoina u poslednjih 6 meseci.",
-    "combo": "940 nm kao dodatni prolaz kod mešovite dubine folikula."
+    "combo": "940 nm kao dodatni prolaz kod mešovite dubine folikula.",
+    "de": {
+      "title": "Haarentfernung — erste Behandlung, dichtes Haar",
+      "tags": [
+        "haarentfernung",
+        "erste behandlung",
+        "arme",
+        "beine",
+        "dichtes haar"
+      ],
+      "indication": "Arme, Beine, Wangen und Kinn bei hoher Haardichte, unabhängig vom Hauttyp.",
+      "params": [
+        [
+          "Wellenlänge",
+          "808 nm"
+        ],
+        [
+          "Energie",
+          "20–26 J/cm²"
+        ],
+        [
+          "Impulsdauer",
+          "25–35 ms"
+        ],
+        [
+          "Frequenz",
+          "8–10 Hz (In-Motion)"
+        ],
+        [
+          "Durchgänge",
+          "3–4 In-Motion-Durchgänge pro Zone"
+        ],
+        [
+          "Kontaktkühlung",
+          "+2 °C"
+        ]
+      ],
+      "sessions": "6–8 Behandlungen im Abstand von 4–6 Wochen",
+      "contra": "Aktive Hautentzündung in der Zone, Isotretinoin in den letzten 6 Monaten.",
+      "combo": "940 nm als zusätzlicher Durchgang bei gemischter Follikeltiefe."
+    },
+    "en": {
+      "title": "Hair removal — first treatment, dense hair",
+      "tags": [
+        "hair removal",
+        "first treatment",
+        "arms",
+        "legs",
+        "dense hair"
+      ],
+      "indication": "Arms, legs, cheeks and chin with high hair density, regardless of skin type.",
+      "params": [
+        [
+          "Wavelength",
+          "808 nm"
+        ],
+        [
+          "Energy",
+          "20–26 J/cm²"
+        ],
+        [
+          "Pulse duration",
+          "25–35 ms"
+        ],
+        [
+          "Frequency",
+          "8–10 Hz (in-motion)"
+        ],
+        [
+          "Passes",
+          "3–4 in-motion passes per area"
+        ],
+        [
+          "Contact cooling",
+          "+2 °C"
+        ]
+      ],
+      "sessions": "6–8 treatments, 4–6 weeks apart",
+      "contra": "Active skin inflammation in the area, isotretinoin in the last 6 months.",
+      "combo": "940 nm as an extra pass for mixed follicle depth."
+    }
   },
   {
     "id": "face-1",
     "title": "Akne i postakne ožiljci",
     "device": "RF Fractio 3 + Dermo Oxy",
-    "tags": ["akne", "ožiljci", "lice", "masna koža"],
+    "tags": [
+      "akne",
+      "ožiljci",
+      "lice",
+      "masna koža"
+    ],
     "indication": "Papulopustulozne akne II stepena i plitki atrofični ožiljci.",
     "params": [
-      ["Režim", "Frakciona RF, matriks 25 iglica"],
-      ["Dubina iglica", "0,5–1,0 mm"],
-      ["Energija", "nivo 3–5 od 10"],
-      ["Broj prolaza", "1 prolaz, bez preklapanja"],
-      ["Priprema", "Dermo Oxy čišćenje + kiseonička infuzija"]
+      [
+        "Režim",
+        "Frakciona RF, matriks 25 iglica"
+      ],
+      [
+        "Dubina iglica",
+        "0,5–1,0 mm"
+      ],
+      [
+        "Energija",
+        "nivo 3–5 od 10"
+      ],
+      [
+        "Broj prolaza",
+        "1 prolaz, bez preklapanja"
+      ],
+      [
+        "Priprema",
+        "Dermo Oxy čišćenje + kiseonička infuzija"
+      ]
     ],
     "sessions": "4 tretmana na 4 nedelje",
     "contra": "Aktivna cistična akna, izotretinoin u toku, metalni implant u zoni.",
-    "combo": "LED plavo svetlo 10 min nakon tretmana; bez retinoida 5 dana."
+    "combo": "LED plavo svetlo 10 min nakon tretmana; bez retinoida 5 dana.",
+    "de": {
+      "title": "Akne und Aknenarben",
+      "tags": [
+        "akne",
+        "narben",
+        "gesicht",
+        "fettige haut"
+      ],
+      "indication": "Papulopustulöse Akne Grad II und flache atrophe Narben.",
+      "params": [
+        [
+          "Modus",
+          "Fraktionierte RF, Matrix 25 Nadeln"
+        ],
+        [
+          "Nadeltiefe",
+          "0,5–1,0 mm"
+        ],
+        [
+          "Energie",
+          "Stufe 3–5 von 10"
+        ],
+        [
+          "Durchgänge",
+          "1 Durchgang, ohne Überlappung"
+        ],
+        [
+          "Vorbereitung",
+          "Dermo-Oxy-Reinigung + Sauerstoffinfusion"
+        ]
+      ],
+      "sessions": "4 Behandlungen im Abstand von 4 Wochen",
+      "contra": "Aktive zystische Akne, laufende Isotretinoin-Therapie, Metallimplantat in der Zone.",
+      "combo": "10 Min. blaues LED-Licht nach der Behandlung; 5 Tage keine Retinoide."
+    },
+    "en": {
+      "title": "Acne and acne scars",
+      "tags": [
+        "acne",
+        "scars",
+        "face",
+        "oily skin"
+      ],
+      "indication": "Grade II papulopustular acne and shallow atrophic scars.",
+      "params": [
+        [
+          "Mode",
+          "Fractional RF, 25-needle matrix"
+        ],
+        [
+          "Needle depth",
+          "0.5–1.0 mm"
+        ],
+        [
+          "Energy",
+          "level 3–5 of 10"
+        ],
+        [
+          "Passes",
+          "1 pass, no overlap"
+        ],
+        [
+          "Preparation",
+          "Dermo Oxy cleansing + oxygen infusion"
+        ]
+      ],
+      "sessions": "4 treatments, 4 weeks apart",
+      "contra": "Active cystic acne, ongoing isotretinoin, metal implant in the area.",
+      "combo": "10 min of blue LED light after the treatment; no retinoids for 5 days."
+    }
   },
   {
     "id": "face-2",
     "title": "Pigmentacije i melazma",
     "device": "Carbon 3XD ND YAG",
-    "tags": ["pigmentacije", "melazma", "lice", "fototip III"],
+    "tags": [
+      "pigmentacije",
+      "melazma",
+      "lice",
+      "fototip III"
+    ],
     "indication": "Epidermalne pigmentne mrlje, solarni lentigo, blaža melazma.",
     "params": [
-      ["Talasna dužina", "1064 nm Q-switch"],
-      ["Fluenca", "1,6–2,4 J/cm²"],
-      ["Veličina spota", "6–8 mm"],
-      ["Frekvencija", "5 Hz"],
-      ["Broj prolaza", "2 laka prolaza do blagog eritema"]
+      [
+        "Talasna dužina",
+        "1064 nm Q-switch"
+      ],
+      [
+        "Fluenca",
+        "1,6–2,4 J/cm²"
+      ],
+      [
+        "Veličina spota",
+        "6–8 mm"
+      ],
+      [
+        "Frekvencija",
+        "5 Hz"
+      ],
+      [
+        "Broj prolaza",
+        "2 laka prolaza do blagog eritema"
+      ]
     ],
     "sessions": "5–6 tretmana na 3 nedelje",
     "contra": "Izlaganje suncu bez zaštite, trudnoća, aktivna melazma u progresiji bez terapije.",
-    "combo": "SPF 50 obavezno 30 dana; azelainska kiselina kućno."
+    "combo": "SPF 50 obavezno 30 dana; azelainska kiselina kućno.",
+    "de": {
+      "title": "Pigmentflecken und Melasma",
+      "tags": [
+        "pigmentflecken",
+        "melasma",
+        "gesicht",
+        "hauttyp III"
+      ],
+      "indication": "Epidermale Pigmentflecken, Lentigo solaris, leichtes Melasma.",
+      "params": [
+        [
+          "Wellenlänge",
+          "1064 nm Q-Switch"
+        ],
+        [
+          "Fluenz",
+          "1,6–2,4 J/cm²"
+        ],
+        [
+          "Spotgröße",
+          "6–8 mm"
+        ],
+        [
+          "Frequenz",
+          "5 Hz"
+        ],
+        [
+          "Durchgänge",
+          "2 leichte Durchgänge bis zu leichtem Erythem"
+        ]
+      ],
+      "sessions": "5–6 Behandlungen im Abstand von 3 Wochen",
+      "contra": "Sonne ohne Schutz, Schwangerschaft, fortschreitendes aktives Melasma ohne Therapie.",
+      "combo": "LSF 50 für 30 Tage Pflicht; Azelainsäure für zu Hause."
+    },
+    "en": {
+      "title": "Pigmentation and melasma",
+      "tags": [
+        "pigmentation",
+        "melasma",
+        "face",
+        "skin type III"
+      ],
+      "indication": "Epidermal pigment spots, solar lentigo, mild melasma.",
+      "params": [
+        [
+          "Wavelength",
+          "1064 nm Q-switch"
+        ],
+        [
+          "Fluence",
+          "1.6–2.4 J/cm²"
+        ],
+        [
+          "Spot size",
+          "6–8 mm"
+        ],
+        [
+          "Frequency",
+          "5 Hz"
+        ],
+        [
+          "Passes",
+          "2 light passes until mild erythema"
+        ]
+      ],
+      "sessions": "5–6 treatments, 3 weeks apart",
+      "contra": "Sun exposure without protection, pregnancy, progressing active melasma without therapy.",
+      "combo": "SPF 50 required for 30 days; azelaic acid at home."
+    }
   },
   {
     "id": "body-1",
     "title": "Celulit i zatezanje — kombinovani protokol",
     "device": "Body Sculpture II + EMS Tesla 2.0",
-    "tags": ["celulit", "telo", "zatezanje", "butine"],
+    "tags": [
+      "celulit",
+      "telo",
+      "zatezanje",
+      "butine"
+    ],
     "indication": "Celulit II–III stepena na butinama i zadnjici, blaža laksnost kože.",
     "params": [
-      ["Kavitacija", "40 kHz, 10 min po zoni"],
-      ["RF zatezanje", "3–5 MHz, 42 °C površinski, 12 min"],
-      ["Vakuum", "nivo 2–3, sporo kretanje"],
-      ["EMS Tesla", "30 min, 70–90% intenziteta"],
-      ["Redosled", "Kavitacija → vakuum RF → EMS"]
+      [
+        "Kavitacija",
+        "40 kHz, 10 min po zoni"
+      ],
+      [
+        "RF zatezanje",
+        "3–5 MHz, 42 °C površinski, 12 min"
+      ],
+      [
+        "Vakuum",
+        "nivo 2–3, sporo kretanje"
+      ],
+      [
+        "EMS Tesla",
+        "30 min, 70–90% intenziteta"
+      ],
+      [
+        "Redosled",
+        "Kavitacija → vakuum RF → EMS"
+      ]
     ],
     "sessions": "10–12 tretmana, 2 puta nedeljno",
     "contra": "Trudnoća, pejsmejker, metalni implanti u zoni, epilepsija, tromboza.",
-    "combo": "2 l vode dnevno i limfna drenaža isti dan uveče."
+    "combo": "2 l vode dnevno i limfna drenaža isti dan uveče.",
+    "de": {
+      "title": "Cellulite und Straffung — kombiniertes Protokoll",
+      "tags": [
+        "cellulite",
+        "körper",
+        "straffung",
+        "oberschenkel"
+      ],
+      "indication": "Cellulite Grad II–III an Oberschenkeln und Po, leichte Hauterschlaffung.",
+      "params": [
+        [
+          "Kavitation",
+          "40 kHz, 10 Min. pro Zone"
+        ],
+        [
+          "RF-Straffung",
+          "3–5 MHz, 42 °C an der Oberfläche, 12 Min."
+        ],
+        [
+          "Vakuum",
+          "Stufe 2–3, langsame Bewegung"
+        ],
+        [
+          "EMS Tesla",
+          "30 Min., 70–90% Intensität"
+        ],
+        [
+          "Reihenfolge",
+          "Kavitation → Vakuum-RF → EMS"
+        ]
+      ],
+      "sessions": "10–12 Behandlungen, 2 Mal pro Woche",
+      "contra": "Schwangerschaft, Herzschrittmacher, Metallimplantate in der Zone, Epilepsie, Thrombose.",
+      "combo": "2 l Wasser täglich und Lymphdrainage am selben Abend."
+    },
+    "en": {
+      "title": "Cellulite and firming — combined protocol",
+      "tags": [
+        "cellulite",
+        "body",
+        "firming",
+        "thighs"
+      ],
+      "indication": "Grade II–III cellulite on thighs and buttocks, mild skin laxity.",
+      "params": [
+        [
+          "Cavitation",
+          "40 kHz, 10 min per area"
+        ],
+        [
+          "RF firming",
+          "3–5 MHz, 42 °C at the surface, 12 min"
+        ],
+        [
+          "Vacuum",
+          "level 2–3, slow movement"
+        ],
+        [
+          "EMS Tesla",
+          "30 min, 70–90% intensity"
+        ],
+        [
+          "Order",
+          "Cavitation → vacuum RF → EMS"
+        ]
+      ],
+      "sessions": "10–12 treatments, twice a week",
+      "contra": "Pregnancy, pacemaker, metal implants in the area, epilepsy, thrombosis.",
+      "combo": "2 l of water a day and lymphatic drainage the same evening."
+    }
   }
 ]
