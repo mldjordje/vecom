@@ -1,12 +1,13 @@
 # Vecom — klikabilni prototip
 
-Demo aplikacije za kupce, servis i admin (`app.vecom.rs` u priči) i sekcija koje se ubacuju
-u postojeći sajt vecom.rs. Bez bekenda, bez baze, bez prave prijave. Katalog aparata je pravi
-(54 uređaja iz njihovog Sanityja, SR/EN/DE), sve ostalo je lažno.
+Demo za Vecom Beauty System: koncept novog sajta vecom.rs, kupčev nalog (Moj Vecom) i admin.
+Bez bekenda, bez baze, bez prave prijave. Katalog aparata, blog objave, iskustva i česta pitanja
+su pravi (preuzeti iz njihovog Sanityja, SR/EN/DE); kupci, upiti i tiketi su izmišljeni.
 
 ## Pokretanje
 
-Next.js 16 (App Router, TypeScript), bez bekenda. Stanje je u memoriji browsera.
+Next.js 16 (App Router, TypeScript), bez bekenda. Stanje je u memoriji browsera
+(osim stranice Projekat, koja beleške čuva u localStorage).
 
 ```bash
 npm install
@@ -15,119 +16,96 @@ npm run dev
 
 Otvara se na http://localhost:4321. Produkcija: `npm run build` pa `npm start`.
 
-**Vercel:** uvesti repo, Framework Preset **Next.js** (prepoznaje sam), ostalo podrazumevano.
+**Vercel:** uvesti repo, Framework Preset **Next.js**, ostalo podrazumevano.
 
-Poppins ide preko `next/font` — servira se sa istog domena, ne zavisi od Google Fonts.
+**Bez interneta na sastanku:** posle prvog otvaranja Vercel linka sa internetom, service worker
+čuva stranicu i sve slike — demo radi i bez mreže (samo produkcija, ne `npm run dev`).
 
 ## Struktura
 
 ```
-app/layout.tsx          html, Poppins, metadata (noindex)
-app/page.tsx            jedina stranica; ekrani idu preko #hash rute
+app/layout.tsx          html, Poppins (next/font), metadata, PWA meta
+app/manifest.ts         manifest za "Dodaj na početni ekran"
+app/pwa-icon/[size]     generisane ikone aplikacije; app/apple-icon.tsx za iOS
 app/globals.css         paleta i tipografija sa vecom.rs
-components/DemoApp.tsx  React ljuska: traka sa personama, #app, toast; montira engine
+app/customer.css        kupčev nalog, edukacija, sertifikat, booking, admin novosti
+app/extras.css          kviz, kalendar, kupci, pretraga, sadržaj sajta, Projekat, PWA
+components/DemoApp.tsx  React ljuska: traka sa personama, #app, toast, service worker
 lib/demo/engine.js      svi ekrani, stanje, prevodi i ruter (location.hash)
-lib/demo/data.ts        uvoz JSON podataka za engine
-data/products.json      54 aparata iz Sanityja (naziv i opis SR/EN/DE, specifikacija SR)
-data/categories.json    8 kategorija
-data/demo.json          lažni kupac, upiti, tiketi, porudžbine, teren, brojke
-data/protocols.json     6 primera protokola tretmana
-data/posts.json         2 prave blog objave iz Sanityja (SR/EN, sa tekstom)
-app/customer.css        kupčev nalog, edukacija i sertifikat, booking, admin novosti
-public/assets/products/*.webp  slike aparata, skinute lokalno
-public/assets/demo/kvar.svg    "fotografija" displeja sa greškom E-04
-scripts/harvest.mjs     skidanje kataloga sa Sanityja (samo čitanje)
+lib/demo/data.ts        uvoz JSON podataka
+data/products.json      54 aparata (naziv i opis SR/EN/DE, specifikacija SR)
+data/posts.json         2 prave blog objave (SR/EN, pun tekst)
+data/site.json          iskustva kupaca i česta pitanja (SR/EN/DE)
+data/protocols.json     6 primera protokola tretmana (SR + DE/EN)
+data/demo.json          izmišljen kupac, upiti, tiketi, porudžbine, teren, brojke
+public/sw.js            service worker (keš za rad bez interneta, klik na obaveštenje)
+public/assets/          slike aparata i objava, logo, demo fotografija kvara
+scripts/harvest.mjs     preuzimanje sadržaja sa Sanityja (samo čitanje): npm run harvest
 ```
 
-Ekrani su za sada HTML stringovi u `lib/demo/engine.js`, montirani iz React ljuske.
-Za pravu aplikaciju prebacuju se u React komponente jedan po jedan (admin po kosturu iz Vita projekta).
+Ekrani su HTML stringovi u `lib/demo/engine.js`, montirani iz React ljuske. Za pravu aplikaciju
+prebacuju se u React komponente (admin po kosturu iz Vita projekta).
 
-Ponovno skidanje kataloga (slike se ne skidaju ponovo ako već postoje):
+## Persone (traka gore desno)
 
-```bash
-npm run harvest
-```
+### Sajt (`#/site`) — koncept novog vecom.rs
 
-## Ekrani
+Cilj je da sajt vodimo mi, bez Sanity-ja: sve na sajtu se uređuje iz Vecom admina.
+Prekidač **SR / EN / DE** je u traci okvira browsera. Beleške za Vecom (gde ide, šta menja) su na srpskom.
 
-Persona se menja trakom gore desno (Sajt · Kupac · Admin) — to je demo pomoć, ne deo proizvoda.
+| Stranica | Ruta | Napomena |
+|---|---|---|
+| Nova početna (koncept) | `#/site/home` | istaknuti aparati (★ iz admina), programi, iskustva, novosti |
+| Katalog aparata | `#/site/catalog` | filter po programu, pretraga; sakriveni u adminu se ne vide |
+| Vodič kroz izbor | `#/site/guide` | 3 pitanja → predlog → upit |
+| ROI kalkulator | `#/site/roi` | na EN/DE u evrima |
+| Stranica aparata + upit | `#/site/product/<slug>` | upit sa izvorom i jezikom, iskustva, česta pitanja |
+| Demo termin | `#/site/demo` | kalendar, termini, `.ics`, stiže u admin → Kalendar i Upiti |
+| Servis i status | `#/site/service` | status po broju (probati **482**), prijava bez naloga |
+| Ulaz u Moj Vecom | `#/site/portal` | dugme u zaglavlju, sekcija za vlasnike |
 
-### Sajt — sekcije za vecom.rs (`#/site`)
+### Kupac (`#/login`) — Moj Vecom
 
-Javni sajt ostaje vecom.rs. Ovo su **sekcije koje se ubacuju u njihov postojeći Next.js + Sanity
-sajt**, prikazane u okviru browsera sa beleškom gde idu i šta menjaju.
+Google prijava je vizuelna. Nalog ima svoj prekidač **SR / DE / EN** (nezavisno od sajta).
 
-**Jezici:** prekidač SR / EN / DE u traci okvira. Prevodi se sve što vidi posetilac
-(naslovi, forme, dugmad, nazivi i opisi aparata iz Sanityja, dani, statusi servisa).
-Beleške za Vecom (gde se sekcija ubacuje, oznake NOVA SEKCIJA) ostaju na srpskom.
-ROI na EN/DE računa u evrima (Austrija). Upit sa EN/DE stiže u admin sa oznakom jezika.
+- Početna: stanje aparata (prstenovi garancije i sonde), brze akcije, servis, aktivnost, kurs, novosti.
+- Aparat, prijava kvara sa fotografijom, praćenje servisa, potrošni, protokoli, dokumenta.
+- **Edukacija** (`#/app/edu`): kurs od 20 lekcija u 5 modula, **kviz posle svakog modula**,
+  **sertifikat sa QR kodom** (`#/app/edu/cert`) i javna provera (`#/verify/<broj>`).
+  Za sastanak: „označi sve lekcije i kvizove kao završene”.
+- **Aplikacija na telefonu:** „Dodaj na početni ekran”, obaveštenja kad admin promeni status
+  servisa, potvrdi porudžbinu ili objavi novost; centar obaveštenja (zvonce).
 
-| Sekcija | Ruta | Ubacuje se na | Stiže u admin |
-|---|---|---|---|
-| Vodič kroz izbor aparata | `#/site/guide` | Početna, katalog | Upiti (preko stranice aparata) |
-| ROI kalkulator | `#/site/roi` | Stranica aparata, /isplativost | Upiti, izvor „Sajt · ROI” |
-| Upit sa stranice aparata | `#/site/product/<slug>` | Svih 54 stranica aparata | Upiti, sa aparatom, izvorom i jezikom |
-| Zakazivanje demo termina | `#/site/demo` | Kontakt, dugme na stranici aparata | Upiti, termin u belešci |
-| Servis i status prijave | `#/site/service` | Nova stranica /servis | Servis, kao novi tiket |
-| Ulaz u Moj Vecom | `#/site/portal` | Zaglavlje + sekcija za vlasnike | Kupčev nalog |
-
-Za probu statusa servisa upisati broj **482**.
-
-**Demo termin** (`#/site/demo`): kalendar u stilu Calendly — aparat sa slikom, lokacija,
-mesečni kalendar (slobodni / popunjeni dani), termini pre i posle podne, podaci, sažetak
-zalepljen na dnu. Potvrda ima „Dodaj u kalendar” (pravi `.ics`) i stiže u admin kao upit.
-
-### Kupac (`#/login`)
-
-Google dugme je vizuelno (600 ms pa ulazak kao Milica Petrović). App ljuska: svetli sidebar
-na desktopu, traka sa karticama na telefonu.
-
-- **Početna:** pozdrav i stanje, brze akcije, upozorenje za sondu (jedan klik u korpu),
-  kartice aparata sa prstenovima (garancija, sonda), servis sa koracima, aktivnost,
-  napredak kursa, Vecom novosti, kontakt osoba.
-- **Aparat:** hero sa slikom i prstenovima, tabovi Pregled / Servis / Obuka / Specifikacija.
-- **Edukacija** (`#/app/edu`): mini kurs od 20 lekcija u 5 modula (video + tekst + „zapamtite”).
-  Napredak se čuva; posle poslednje lekcije otključava se **sertifikat za štampu**
-  (`#/app/edu/cert`, A4 landscape). Za sastanak: link „označi sve lekcije kao odgledane”.
-- **Novosti:** prave objave sa njihovog bloga (iz Sanityja) i sve što admin objavi za Moj Vecom.
-- Servis, prijava kvara, potrošni, protokoli, dokumenta.
-
-**Video za kurs:** kad se snimak iseče na 20 delova, fajlove staviti u `public/video/`
-i u `COURSE` u `lib/demo/engine.js` lekciji dodati `video: "/video/01.mp4"`. Lekcija tada
-prikazuje pravi plejer i sama se označava kao odgledana kad se klip završi.
+**Video za kurs:** klipove staviti u `public/video/` i u `COURSE` u `lib/demo/engine.js`
+lekciji dodati `video: "/video/01.mp4"`. Lekcija se sama označi kao odgledana kad se klip završi.
 
 ### Admin (`#/admin`)
 
-- **Prijava:** samo dugme „Sign in with Google” (vizuelno, 600 ms). U pravoj aplikaciji:
-  Google OAuth, pristup samo pozvanim @vecom.rs nalozima.
-- **Desktop radni prostor** (laptop, ≥ 960 px): kostur preuzet iz Vita admin demoa —
-  tamni sidebar, prekidač uloga, topbar, metrika-kartice, lista + detalj za upite i servis.
-- **Prikaz na telefonu:** dugme u sidebaru prebacuje u okvir telefona (traka sa karticama na dnu).
-  Na pravom telefonu admin je uvek u mobilnom prikazu.
-- **Uloge:** Prodaja (Jelena — pregled, upiti, servis, novosti, porudžbine, teren, brojke) i
-  Serviser (Dejan — moj dan sa obilascima, servis, delovi).
-- **Novosti i blog** (`#/admin/news`): prave objave iz Sanityja + nacrti; statusi objavljeno /
-  zakazano / nacrt, oznake jezika (DE nedostaje i na današnjem sajtu), editor sa SR/EN/DE
-  tabovima, naslovnom slikom i pregledom Google rezultata. Kanali: sajt, Moj Vecom, mejl;
-  publika: svi kupci ili samo vlasnici određenog aparata. Objava za Moj Vecom odmah se vidi kod kupca.
+Prijava „Sign in with Google”. Desktop radni prostor (kostur iz Vita admina) ili prikaz na telefonu.
+Uloge: Prodaja i Serviser. **Globalna pretraga: Ctrl+K.**
+
+- Pregled, Upiti, **Kalendar**, Servis, Porudžbine, Teren, Brojke
+- Kupci: **Kupci i nalozi** (pozivnica pri isporuci), **Edukacija** (polaznici, zastoji, video lekcije)
+- Sajt: **Katalog aparata**, **Novosti i blog**, **Iskustva i pitanja** (provera razlika u prevodima)
+
+### Projekat (`#/project`)
+
+Za kraj sastanka: svih 52 funkcija po grupama (sajt, nalog, admin, preuzimanje i tehnika),
+uz svaku **Potrebno / Kasnije / Ne treba**, faza i beleška, plus pitanja za klijenta i sledeći koraci.
+Čuva se u ovom browseru; izvoz: kopiraj rezime, `.txt`, štampa.
 
 ## Redosled na sastanku, 15 min
 
-1. Kupčev dashboard + Edukacija: lekcija → „označi sve” → sertifikat (2)
-2. Prijava kvara — dugme „Uzmi demo fotografiju” pa Pošalji (2)
-3. Admin: Sign in with Google → prebaci na telefon → upit → Pozovi → status; tiket #483 sa fotografijom;
-   teren → garancije → pošalji svima; kratko vrati na desktop i uloga Serviser (4)
-4. Sajt: stranica aparata → prebaci na DE → pošalji upit → „Vidi kako je stiglo adminu”; ROI kalkulator (2)
-5. Sajt: demo termin u kalendaru; vodič kroz izbor; status servisa samo pomenuti (2)
-6. Pitanja (3)
-
-Protokole, dokumenta i porudžbine samo pomenuti.
+1. Kupac: početna, prijava kvara sa fotografijom, Edukacija → sertifikat (3)
+2. Admin: prebaci na telefon → upit → Pozovi → status; tiket sa fotografijom; teren → pošalji svima (4)
+3. Admin desktop: Kupci i nalozi, Katalog → izmena → „Pogledaj na sajtu” (2)
+4. Sajt: nova početna → katalog → aparat na DE → upit; demo termin u kalendaru (3)
+5. Projekat: prolaz kroz funkcije sa klijentom (3+)
 
 ## Granice
 
 - Svuda stoji oznaka DEMO. Ovo je predlog, ne zvanična Vecom aplikacija.
 - Nema izmišljenih cena, referenci ni brojki o poslovanju.
-- Njihov Sanity se samo čita; slike i tekstovi se koriste isključivo za ovaj demo.
+- Njihov Sanity se samo čita; sadržaj se koristi isključivo za ovaj demo.
 - Prijava Google nalogom je samo izgled — ne otvara OAuth i ne dodiruje tuđe naloge.
-- Osvežavanje stranice briše sve što je unešeno u demou (stanje je u memoriji).
-- Demo ne radi dvoklikom bez interneta — otvara se preko Vercel linka ili `npm run dev`.
+- Osvežavanje stranice briše sve uneto u demou (osim beleški na stranici Projekat).
