@@ -44,6 +44,7 @@ export function DemoApp() {
             <button data-go="#/site">Sajt</button>
             <button data-go="#/login">Kupac</button>
             <button data-go="#/admin">Admin</button>
+            <button data-go="#/project">Projekat</button>
           </nav>
         </div>
       </header>
